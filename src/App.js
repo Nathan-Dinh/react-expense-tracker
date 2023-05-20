@@ -1,6 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import "./App.css";
 import Expense from "./components/Expenses/Expenses"; //Imports function from Expense
 import NewExpense from "./components/NewExpense/NewExpense";
+import Header from "./components/Header/Header"; //Imports function from Header
+import Footer from "./components/Footer/Footer";
 
 const DUMMY_EXPENSE = [
   {
@@ -25,14 +28,13 @@ const DUMMY_EXPENSE = [
 ];
 
 function App() {
+  const [expenses, setExpense] = useState(DUMMY_EXPENSE);
 
-  const [expenses,setExpense] = useState(DUMMY_EXPENSE);
-
-  const addExpenseHandler = (expense) =>{
-    setExpense(prevExpense =>{
-      return[expense, ...prevExpense]
+  const addExpenseHandler = (expense) => {
+    setExpense((prevExpense) => {
+      return [expense, ...prevExpense];
     });
-  }
+  };
 
   //This is how we use to write react before jsx became a thing. We stil use this but the people who created react abstracted so it's done under the hood instead.
   //This is what is happening when we return using jsx syntax
@@ -42,12 +44,16 @@ function App() {
   //   {},
   //   React.createElement("h2", {}, "Let's get started!"),
   //   React.createElement(Expense, { expense: EXPENSE })
-  // ); 
+  // );
 
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expense items={expenses}/>
+      <Header/>
+      <main className="Main">
+        <NewExpense onAddExpense={addExpenseHandler} />
+        <Expense items={expenses} />
+      </main>
+      <Footer />
     </div>
   );
 }

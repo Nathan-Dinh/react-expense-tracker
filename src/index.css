@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
 }
 
 html {
@@ -10,5 +12,14 @@ html {
 
 body {
   margin: 0;
-  background-color: #3f3f3f;
+  background-color: #222426;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: white;
 }

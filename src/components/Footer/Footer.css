@@ -1,0 +1,59 @@
+footer {
+    display: grid;
+    grid-template-areas: 
+    "FooterOne  . . . . FooterTwo"
+    " FooterThree FooterThree FooterThree FooterThree FooterThree FooterThree "
+    "FooterFour FooterFour FooterFour FooterFour FooterFour FooterFour"
+    ;
+    height: 17em;
+    width: 100%;
+    padding: 2em 5em;
+    background-color: #656b72;
+  }
+  
+  .Section-One{
+  grid-area: FooterOne;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  font-size: 1.1em;
+  width: 2em;
+  }
+  
+  .Footer-SubHeader{
+    margin-bottom: 1em;
+    color: white;
+  }
+  
+  .Footer-Link{
+  margin-bottom: 10px;
+  }
+  
+  .Section-Two{
+    grid-area: FooterTwo;
+    display: flex;
+    justify-content: right;
+  }
+  
+  .Section-Three{
+    grid-area: FooterThree;
+    margin: 10px;
+    height: 10px;
+  }
+  
+  .Section-Four{
+    grid-area: FooterFour;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+  }
+  
+  .Footer-Icon{
+    width: 50px;
+    height: 50px;
+    margin: 0 1em;
+  }
+
+  .Footer-Icon:hover{
+    color: white;
+  }
